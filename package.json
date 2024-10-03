@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "netlidy deploy --prod"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,9 @@
   "dependencies": {
     "axios": "^1.7.7",
     "express": "^4.21.0",
+    "netlify-cli": "17.36.4",
+    "netlify-lambda": "^2.0.16",
+    "serverless-http": "^3.2.0",
     "xml2js": "^0.6.2"
   }
 }
