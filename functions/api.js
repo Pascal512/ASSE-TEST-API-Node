@@ -55,10 +55,7 @@ router.get('/:number', async (req, res) => {
         const rssLink = rssLinks[number];
         try {
             const rssContent = await fetchAndConvertRSS(rssLink);
-            res.json({
-                success: true,
-                data: rssContent,
-            });  // Retourne le contenu RSS converti en JSON
+            res.json(JSON.parse(rssContent));  // Retourne le contenu RSS converti en JSON
         } catch (error) {
             res.status(500).json({
                 success: false,
@@ -77,3 +74,4 @@ router.get('/:number', async (req, res) => {
 
 app.use('/.netlify/functions/api', router);
 module.exports.handler = serverless(app);
+
